@@ -5,10 +5,10 @@ import "slick-carousel/slick/slick.css";
 // We are using custom arrows and dots, so we don't need the default theme assets
 import { ChevronLeft, ChevronRight, Heart } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import img1 from "figma:asset/c75fff3095bbab666123d0afccb7b698a7aa2d66.png";
-import img2 from "figma:asset/0b51578771cc5fc2e30f1e26cb9664d5c46b2754.png";
-import img3 from "figma:asset/2f29a8d86dc44d5ccd483bf45d24a791b43c5c36.png";
-import img4 from "figma:asset/6fd69dc015d549639e057c4cacf9eb22a90a5498.png";
+import img1 from "../../assets/c75fff3095bbab666123d0afccb7b698a7aa2d66.png";
+import img2 from "../../assets/0b51578771cc5fc2e30f1e26cb9664d5c46b2754.png";
+import img3 from "../../assets/2f29a8d86dc44d5ccd483bf45d24a791b43c5c36.png";
+import img4 from "../../assets/6fd69dc015d549639e057c4cacf9eb22a90a5498.png";
 
 const images = [
   {
