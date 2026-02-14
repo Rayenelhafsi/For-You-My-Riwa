@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Heart, Music, Stars, Sparkles } from "lucide-react";
 import confetti from "canvas-confetti";
@@ -6,13 +6,16 @@ import { PetalBackground } from "./components/PetalBackground";
 import { BloomingRose } from "./components/BloomingRose";
 import { ImageWithFallback } from "./components/figma/ImageWithFallback";
 import { MemoryCarousel } from "./components/MemoryCarousel";
+import song from "@/assets/song.mp3";
 
 export default function App() {
   const [isBloomed, setIsBloomed] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   const handleBloom = () => {
     setIsBloomed(true);
+    audioRef.current?.play();
     setTimeout(() => {
       setShowMessage(true);
       confetti({
@@ -26,6 +29,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-900 text-rose-50 flex flex-col items-center justify-center p-4 relative overflow-hidden font-['Playfair_Display']">
+      <audio ref={audioRef} src={song} loop />
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <ImageWithFallback
